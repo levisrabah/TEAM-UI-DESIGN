@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: 'Poppins',sans-serif;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 body{
     display: flex;
@@ -11,12 +14,25 @@ body{
     min-height: 100vh;
     background: #222;
 }
+h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    z-index: 1000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+  }
 .container{
     position: relative;
     width: 600px;
     height: 600px;
     border: 2px solid #fff;
-    border-radius: 50%
+    border-radius: 50%;
 }
 .container .icon{
     position: relative;
@@ -30,23 +46,22 @@ body{
 }
 .container .icon .imgBx{
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     transition: 0.5s;
     border: 1px solid #fff;
     box-shadow: 0 0 0 4px #222,
-    0 0 0 6px #fff;
-    transform: rotate(calc(360deg/8 * var(--i)));
+                0 0 0 6px #fff;
+    transform: rotate(calc(360deg/4 * var(--i)));
     transform-origin: 340px;
     z-index: 100;
     overflow: hidden;
 }
 .container .icon .imgBx.active{
     box-shadow: 0 0 0 4px #222,
-    0 0 0 12px orange;
+                0 0 0 12px orange;
 }
-
 .container .icon .imgBx img{
     position: absolute;
     top: 0;
@@ -55,11 +70,10 @@ body{
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    transform: rotate(calc(-360deg/8 * var(--i)));
-    filter:  grayscale(1);
-
+    transform: rotate(calc(-360deg/4 * var(--i)));
+    filter: grayscale(1);
 }
-.container .icon .imgBx.active{
+.container .icon .imgBx.active img{
     filter: grayscale(0);
 }
 .content {
@@ -78,7 +92,7 @@ body{
     border-left: 4px solid #2196f3;
     border-right: 4px solid #fff;
     border-radius: 50%;
-    animation: animate_01 5s linear infinite;
+    animation: animate_01 1.5s linear infinite;
     z-index: 1;
     pointer-events: none;
 }
@@ -90,7 +104,6 @@ body{
         rotate: 360deg;
     }
 }
-
 .content::after{
     content: '';
     position: absolute;
@@ -99,7 +112,7 @@ body{
     border-left: 4px solid orange;
     border-right: 4px solid #fff;
     border-radius: 50%;
-    animation: animate_02 2.5s linear infinite;
+    animation: animate_02 2s linear infinite;
     z-index: 1;
     pointer-events: none;
 }
@@ -132,15 +145,13 @@ body{
     flex-direction: column;
     gap: 15px;
 }
-
 .contentBx .card .imgBx{
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     border-radius: 10px;
     overflow: hidden;
 }
-
 .contentBx .card .imgBx img{
     position: absolute;
     top: 0;
@@ -173,13 +184,13 @@ body{
 .contentBx .card .textBx .sci{
     position: relative;
     display: flex;
-    gap:  7px;
+    gap: 7px;
     margin-top: 10px;
 }
 .contentBx .card .textBx .sci li a{
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
